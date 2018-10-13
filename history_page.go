@@ -16,9 +16,11 @@ type HistoryPage struct {
 	Page     int
 }
 
+const NumRecordItemsPerPage = 10
+
 func (p *HistoryPage) BuildURL() string {
 	return fmt.Sprintf("https://shogiwars.heroz.jp/users/history/%s/web_app?gtype=%s&start=%d",
-		p.UserName, p.GameType.ParamString(), p.Page*10)
+		p.UserName, p.GameType.ParamString(), p.Page*NumRecordItemsPerPage)
 }
 
 var reTime = regexp.MustCompile(`\d{4}/\d{2}/\d{2} \d{2}:\d{2}`)

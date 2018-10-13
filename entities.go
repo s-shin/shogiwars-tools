@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"sort"
+	"time"
+)
 
 type RecordID string
 
@@ -89,4 +92,16 @@ func (m *AppDataManager) AppendRecordItems(items ...*RecordItem) int {
 		}
 	}
 	return n
+}
+
+func SortRecordItemsByDate(items []*RecordItem, asc bool) []*RecordItem {
+	r := make([]*RecordItem, len(items))
+	copy(r, items)
+	sort.Slice(r, func(i, j int) bool {
+		if r[i].Date.Unix() < r[j].Date.Unix() {
+			return asc
+		}
+		return !asc
+	})
+	return r
 }

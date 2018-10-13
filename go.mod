@@ -8,6 +8,7 @@ require (
 	github.com/k0kubun/pp v2.3.0+incompatible
 	github.com/mattn/go-colorable v0.0.9 // indirect
 	github.com/mattn/go-isatty v0.0.4 // indirect
+	github.com/olekukonko/tablewriter v0.0.0-20180912035003-be2c049b30cc
 	github.com/peterh/liner v1.1.0 // indirect
 	github.com/sirupsen/logrus v1.1.0 // indirect
 	github.com/spf13/cobra v0.0.3 // indirect
